@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🐱</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3e9dc;--ink:#3b2f2f;--c1:#f4b6a6;--c2:#b9d8c2;--c3:#c9c1e8;--paper:#fffaf2}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Cairo',system-ui,sans-serif;color:var(--ink);
+  background:radial-gradient(circle at 20% 10%,var(--c3) 0,transparent 40%),
+             radial-gradient(circle at 85% 90%,var(--c1) 0,transparent 40%),var(--bg);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blob{position:fixed;border-radius:50%;opacity:.5;filter:blur(2px);animation:float 9s ease-in-out infinite}
+.b1{width:140px;height:140px;background:var(--c2);top:8%;right:6%}
+.b2{width:90px;height:90px;background:var(--c1);bottom:10%;left:8%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-22px) rotate(8deg)}}
+
+.stack{position:relative;width:min(92vw,400px)}
+.stack::before,.stack::after{content:"";position:absolute;inset:0;border-radius:26px;z-index:0}
+.stack::before{background:var(--c1);transform:rotate(-3deg) translate(6px,6px)}
+.stack::after{background:var(--c2);transform:rotate(2.5deg) translate(-5px,8px)}
+.card{position:relative;z-index:1;background:var(--paper);border-radius:26px;padding:30px 24px 26px;
+  box-shadow:0 14px 30px rgba(59,47,47,.18);text-align:center;min-height:430px;
+  display:flex;flex-direction:column;justify-content:center}
+.page{display:none;animation:in .5s ease both}
+.page.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(16px) scale(.98)}}
+p{font-size:18px;line-height:2;margin:10px 0}
+h2{margin:6px 0 2px;font-size:22px}
+.btn,button{font-family:inherit;display:inline-block;margin:14px 4px 0;padding:11px 28px;border:none;
+  background:var(--ink);color:#fff;border-radius:999px;font-size:16px;cursor:pointer;text-decoration:none;
+  box-shadow:0 5px 0 #00000030;transition:.15s}
+.btn:active,button:active{transform:translateY(3px);box-shadow:0 2px 0 #00000030}
+.btn.soft{background:var(--c3);color:var(--ink)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:22px}
+.dots i{width:9px;height:9px;border-radius:50%;background:#3b2f2f25;transition:.3s}
+.dots i.on{background:var(--ink);width:24px;border-radius:9px}
+.cat{width:130px;margin:0 auto}
+.eye{animation:blink 4s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.photos img,.photos .ph{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;border:4px solid #fff;
+  box-shadow:0 6px 14px rgba(0,0,0,.15);background:var(--c3);display:flex;align-items:center;justify-content:center;font-size:48px}
+.photos .a{transform:rotate(-3deg)}.photos .b{transform:rotate(3deg)}
+small{display:block;margin-top:14px;opacity:.6}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 4px}
+.tools a{display:flex;flex-direction:column;gap:2px;padding:12px 8px;border-radius:16px;text-decoration:none;
+  color:var(--ink);background:var(--c3);box-shadow:0 4px 0 #00000018;transition:.15s}
+.tools a:nth-child(3n+2){background:var(--c2)}
+.tools a:nth-child(3n){background:var(--c1)}
+.tools a:active{transform:translateY(3px);box-shadow:none}
+.tools span{font-size:12px;opacity:.75}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<div class="stack"><div class="card">
+
+  <div class="page on">
+    <svg class="cat" viewBox="0 0 120 110">
+      <path d="M18 40 L22 6 L48 26 Z M102 40 L98 6 L72 26 Z" fill="#3b2f2f"/>
+      <ellipse cx="60" cy="64" rx="46" ry="38" fill="#3b2f2f"/>
+      <ellipse class="eye" cx="42" cy="60" rx="6" ry="8" fill="#fffaf2"/>
+      <ellipse class="eye" cx="78" cy="60" rx="6" ry="8" fill="#fffaf2"/>
+      <path d="M55 74 Q60 80 65 74 Z" fill="#f4b6a6"/>
+      <path d="M60 80 Q52 90 44 84 M60 80 Q68 90 76 84" stroke="#fffaf2" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <h2>Yes i am wrong ...again</h2>
+    <p> So here is another apology .<br>
+    <button onclick="go(1)">lets see</button>
+  </div>
+
+  <div class="page">
+    <h2> some cats</h2>
+    <p> just in case if you still feel bad </p>
+    <div class="photos">
+      <!-- حط صورك باسم cat1.jpg و cat2.jpg بنفس المجلد -->
+      <img class="a" src="https://github.com/nahorange2/sama/raw/154331d440df363dc32e292603fd1ec546ff3772/cat1.jpg" alt="" onerror="this.outerHTML='<div class=\'ph a\'>😺</div>'">
+      <img class="b" src="https://github.com/nahorange2/sama/raw/154331d440df363dc32e292603fd1ec546ff3772/cat2.jpg" alt="" onerror="this.outerHTML='<div class=\'ph b\'>😸</div>'">
+    </div>
+    <button onclick="go(2)">ok next</button>
+  </div>
+
+  <div class="page">
+    <h2>something might help you  </h2>
+    <p> in uni ofc </p>
+    <div class="tools">
+      <a href="https://getartcraft.com/apps" target="_blank"><b>craft</b><span>open source apps (adobe or microsoft 365 for free) </span></a>
+      <a href="https://www.photopea.com" target="_blank"><b>Photopea</b><span>edit photos online  </span></a>
+      <a href="https://penpot.app" target="_blank"><b>Penpot</b><span>designe styles for apps </span></a>
+      <a href="https://coolors.co" target="_blank"><b>Coolors</b><span> find colors </span></a>
+      <a href="https://gamma.app" target="_blank"><b>Gamma</b><span>generate presentations </span></a>
+    </div>
+    <button onclick="go(3)">uh huh ?</button>
+  </div>
+
+  <div class="page">
+    <h2>وبس</h2>
+    <p> hope this will be good enough to go voice together again </p>
+    <a class="btn" href="https://www.instagram.com/lonly_orange/" target="_blank">انستا</a>
+    <small> 🤍</small>
+  </div>
+
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+</div></div>
+
+<script>
+const pages=document.querySelectorAll('.page'),dots=document.querySelectorAll('.dots i');
+function go(n){pages.forEach((p,i)=>p.classList.toggle('on',i===n));dots.forEach((d,i)=>d.classList.toggle('on',i===n));}
+</script>
+</body>
+</html>
